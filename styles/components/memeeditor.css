@@ -12,3 +12,11 @@
 h3{
     color: black;
 }
+
+.control-painel form{
+    margin-bottom: 30px;
+}
+
+label{
+    color:black;
+}

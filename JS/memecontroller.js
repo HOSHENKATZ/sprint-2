@@ -7,7 +7,9 @@ function getMemeSenttings(elForm) {
 
     console.dir(elForm);
     var newClr = document.getElementById('color').value
-    gcurrmeme.lines[gcurrmeme.selectedLineIdx].color = newClr
+    gcurrmeme.lines[gcurrmeme.selectedLineIdx].outlineColor = newClr
+    var newFillClr = document.getElementById('fill-color').value
+    gcurrmeme.lines[gcurrmeme.selectedLineIdx].fillColor = newFillClr
     var newSize = document.getElementById('size').value
     console.log(newClr,newSize)
     gcurrmeme.lines[gcurrmeme.selectedLineIdx].size = newSize
@@ -17,7 +19,7 @@ function renderMeme(meme = gcurrmeme) {
     drawImg(gcurrmeme.imgId)
     var txt = document.getElementById('line').value
     if (line.length === 0) return
-    creatLine(meme, txt)
+    modifyLine(meme, txt)
 
 
 }
@@ -37,20 +39,33 @@ function drawImg(id) {
 function drawText(lines) {
     lines.forEach(line => {
         console.log(line)
-        gCtx.lineWidth = 10
-        gCtx.strokeStyle = line.color
-        gCtx.font = `${line.size}px arial`
-        console.log(line.size);
+        gCtx.lineWidth = 5
+        gCtx.fillStyle = line.fillColor
         
+        gCtx.strokeStyle = line.outlineColor
+        gCtx.font = `bold ${line.size}px arial `
+        console.log(line.size);
         gCtx.textAlign = 'left'
         gCtx.textBaseline = 'top'
-
-        gCtx.strokeText(line.txt, 0, 0)
+        gCtx.fillText(line.txt, line.x, line.y)
+        gCtx.strokeText(line.txt, line.x, line.y)
     });
 }
 
+function onAddLine(){
+    
+    addLine()
+    document.getElementById('line').value = 'insert text'
+    renderMeme()
+}
 function onDownloadImg(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }
 
+function onSwitchLine(){
+    switchLine()
+    var elInput = document.getElementById('line')
+    elInput.value = gcurrmeme.lines[gcurrmeme.selectedLineIdx].txt
+    renderMeme
+}

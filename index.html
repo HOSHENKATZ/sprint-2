@@ -14,7 +14,7 @@
             <div class="logo">ulti<span>mate</span> memes</div>
             <nav class="main-nav">
                 <ul class="flex clean-list">
-                    <li onclick="onLiclick(this)"><a>Photo gallery</a></li>
+                    <li onclick="location.reload()"><a>Photo gallery</a></li>
                     <li onclick="onLiclick(this)"><a>My saved memes</a></li>
                     <li onclick="onLiclick(this)"><a>About</a></li>
                 </ul>
@@ -54,14 +54,18 @@
                 </div>
                 <div class="control-painel">
                     <form action="" onchange="getMemeSenttings(this)">
-                           <label for="text">text:</label>
-                            <input type=" text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
-                            <label for="color">color:</label>
-                            <input type="color" id="color" placeholder="#000">
-                            <label for="size">size:</label>
-                            <input type="range" id="size" min="1" max="150" value="100" >
+                        <label for="text">text:</label>
+                        <input type=" text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
+                        <label for="color">Text outline color:</label>
+                        <input type="color" id="color" placeholder="#000">
+                        <label for="color">Text fill:</label>
+                        <input type="color" id="fill-color" placeholder="#000">
+                        <label for="size">size:</label>
+                        <input type="range" id="size" min="1" max="150" value="100">
+                        <button class="btn rounded" type="button" onclick="onAddLine()">Add text</button>
+                        <button class="btn rounded" type="button" onclick="onSwitchLine()">switch lines</button>
                     </form>
-                    <button class="btn arrow" onclick="onDownloadImg(this)"> download="my-img.jpg">Download Image from Canvas</button>
+                    <a type="submit" class="btn rounded arrow" onclick="onDownloadImg(this)" download="my-meme.jpg">Download meme</a>
                 </div>
             </main>
         </section>
