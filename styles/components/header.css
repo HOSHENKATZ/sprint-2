@@ -1,0 +1,8 @@
+.main-header {
+    grid-template-columns: 1/ -1;
+    background-color: var(--clr-primary1);
+    box-shadow: inset 0px -6px 0 rgb(22, 22, 22);
+}
+.main-header .btn-toggle-menu {
+    display: none;
+}

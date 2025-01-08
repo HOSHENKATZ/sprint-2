@@ -1,0 +1,35 @@
+/* playfair display */
+@font-face {
+    font-family: euro;
+    src: url(/eurofurence/eurof55.ttf);
+}
+
+@font-face {
+    font-family: lato reg;
+    src: url(/lato/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: latobold;
+    src: url(/lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: fa;
+    src: url(/fa/fa-brands-400.ttf);
+}
+
+.fa::before {
+    font-family: fa;
+}
+
+.fa.facebook::before {
+    content: '\f39e';
+}
+
+.fa.x::before {
+    content: '\f099';
+}
+
+.fa.instagram::before {
+    content: '\f16d';
+}

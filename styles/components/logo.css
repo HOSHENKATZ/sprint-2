@@ -1,0 +1,12 @@
+.logo {
+    font-family: euro;
+    color: rgb(255, 255, 255);
+    font-size: 2.0625em;
+    grid-column: 2;
+}
+
+
+.logo span {
+    color: var(--clr-logospan1);
+}
+
