@@ -52,14 +52,14 @@ function drawText(lines) {
         gCtx.strokeText(line.txt, line.x, line.y) 
     });  
 }
-function drawRect(x, y) {
-    var text = gcurrmeme.lines[gcurrmeme.selectedLineIdx].txt
-    console.log(text)
-    var txt = gCtx.measureText(text)
-    gCtx.strokeStyle = 'orange'
-    gCtx.strokeRect(x, y, gcurrmeme.lines[gcurrmeme.selectedLineIdx].size, txt.Width)
+// function drawRect(x, y) {
+//     var text = gcurrmeme.lines[gcurrmeme.selectedLineIdx].txt
+//     console.log(text)
+//     var txt = gCtx.measureText(text)
+//     gCtx.strokeStyle = 'orange'
+//     gCtx.strokeRect(x, y, gcurrmeme.lines[gcurrmeme.selectedLineIdx].size, txt.Width)
  
-}
+// }
 
 function onAddLine(){
     
