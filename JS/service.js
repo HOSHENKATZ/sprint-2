@@ -15,9 +15,10 @@ function creatMeme(imgId) {
     return meme
 }
 
-function creatLine(meme, txt) {
-    console.log(meme.lines)
-    var line = meme.lines[selectedLineIdx]
-    line.txt = txt
-    console.log(line)
+function creatLine(meme, text) {
+    console.log(meme.selectedLineIdx)
+    var line = meme.lines[meme.selectedLineIdx]
+    line.txt = text
+    console.log(text)
+    console.log(meme.lines[meme.selectedLineIdx])
 }

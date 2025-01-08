@@ -1,5 +1,5 @@
 /* Mobile Only  */
- @media (max-width: 920px) {
+@media (max-width: 920px) {
 
     .main-header {
         height: 60px;
@@ -43,7 +43,7 @@
     .main-nav a {
         padding: 1em;
     }
-} 
+}
 
 /* Small */
 @media (min-width: 640px) {
@@ -81,23 +81,34 @@
     }
 
     .gallery-container {
-        
+
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-auto-flow: dense;
-        
-    
+
+
     }
+
     img:nth-child(4n) {
         grid-column: span 2;
         grid-row: span 2;
     }
-    
+
     img:nth-child(6n) {
         grid-column: span 3;
         grid-row: span 3;
     }
-    
 
+
+    .editor-content {
+        align-items: stretch;
+        grid-template-columns: 1fr 1fr;
+    }
+    canvas{
+        grid-template-columns: 1;
+    }
+    .control-painel{
+        grid-template-columns: 2;
+    }
 }
 
 /* Large */
@@ -115,5 +126,5 @@
         width: 130px;
         height: 130px;
     }
-    
+
 }

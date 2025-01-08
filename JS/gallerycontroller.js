@@ -7,6 +7,7 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     onResize()
+    console.log(gCtx)
 }
 
 function onResize() {
@@ -32,6 +33,6 @@ function onMemePicked(elImage) {
     console.log(elImage)
     var meme = creatMeme(elImage.id)
     gcurrmeme = meme
-    renderMeme(meme)
+    renderMeme(gcurrmeme)
 }
 
