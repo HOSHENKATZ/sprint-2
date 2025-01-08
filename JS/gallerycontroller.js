@@ -1,4 +1,5 @@
 'use strict'
+
 let gElCanvas
 let gCtx 
 
@@ -6,6 +7,13 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     onResize()
+}
+
+function onResize() {
+    const elContainer = document.querySelector('.canvas-container')
+    // Changing the canvas dimension clears the canvas
+    gElCanvas.width = elContainer.clientWidth - 2
+
 }
 
 function toggleMenu() {
@@ -20,15 +28,10 @@ function onMemePicked(elImage) {
     console.dir(elImage)
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor').classList.remove('hidden')
-    drawImg(elImage.id)
+    gcurrImg = elImage
+    console.log(elImage)
+    var meme = creatMeme(elImage.id)
+    gcurrmeme = meme
+    renderMeme(meme)
 }
 
-function drawImg(id) {
-    console.log(id)
-    const elImg = new Image()
-    elImg.src = `img/${id}.jpg`
-
-    elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
-    }
-}

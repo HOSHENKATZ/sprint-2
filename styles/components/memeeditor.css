@@ -1,7 +1,21 @@
 
-.canvas-container{
+.editor-content{
     display: grid;
     align-items: stretch;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+}
+.canvas-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+h3{
+    color: black;
+}
+canvas{
+    grid-template-columns: 1;
+}
+.control-painel{
+    grid-template-columns: 2;
 }

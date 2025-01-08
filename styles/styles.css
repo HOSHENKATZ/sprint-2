@@ -1,8 +1,6 @@
 /* Setup */
 @import url(setup/typography.css);
 @import url(setup/vars.css);
-
-
 /* Components */
 @import url(components/header.css);
 @import url(components/logo.css);
@@ -14,6 +12,9 @@
 @import url(basics/base.css);
 @import url(basics/layout.css);
 @import url(basics/helpers.css);
+
+
+@import url(components/memeeditor.css);
 
 /* Media Queries */
 @import url(setup/mq.css);

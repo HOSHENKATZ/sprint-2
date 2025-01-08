@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <title>Document</title>
 </head>
+
 <body onload="onInit()">
     <header class="main-header full main-layout">
         <div class="flex flex align-center space-between">
@@ -22,7 +24,7 @@
     </header>
     <main>
         <section class="gallery-container">
-           
+
             <img src="img/1.jpg" alt="" onclick=" onMemePicked(this)" id='1'>
             <img src="img/2.jpg" alt="" onclick=" onMemePicked(this)" id='2'>
             <img src="img/3.jpg" alt="" onclick=" onMemePicked(this)" id='3'>
@@ -37,25 +39,34 @@
             <img src="img/12.jpg" alt="" onclick=" onMemePicked(this)" id='12'>
             <img src="img/13.jpg" alt="" onclick=" onMemePicked(this)" id='13'>
             <img src="img/14.jpg" alt="" onclick=" onMemePicked(this)" id='14'>
-            <img src="img/15.jpg" alt="" onclick=" onMemePicked(this)" id='15'> 
+            <img src="img/15.jpg" alt="" onclick=" onMemePicked(this)" id='15'>
             <img src="img/16.jpg" alt="" onclick=" onMemePicked(this)" id='16'>
             <img src="img/17.jpg" alt="" onclick=" onMemePicked(this)" id='17'>
             <img src="img/18.jpg" alt="" onclick=" onMemePicked(this)" id='18'>
         </section>
         <section class="meme-editor hidden">
-            <div class="canvas-container">
-                <h3>Container</h3>
-                <canvas width="400" height="400" >
-                </canvas>
-            </div>
-        </section>
-        <div class="control-painel">
+            <h3>Container</h3>
+            <main class="editor-content">
+                    <div class="canvas-container">
+                        
+                        <canvas width="400" height="400">
+                        </canvas>
+                    </div>
+                    <div class="control-painel">
+                        <form action="" >
+                            <label for="text">text</label>
+                            <input type="text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
 
-        </div>
+                        </form>
+                    </div>
+                </main>
+            </section>
 
     </main>
 
-
-    <script src="JS/controller.js"></script>
+    <script src="JS/gallerycontroller.js"></script>
+    <script src="JS/service.js"></script>
+    <script src="JS/memecontroller.js"></script>
 </body>
+
 </html>
