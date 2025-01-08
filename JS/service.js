@@ -1,0 +1,2 @@
+var gImgs = []
+var gMeme = {}

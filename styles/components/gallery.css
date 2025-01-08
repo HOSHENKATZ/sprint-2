@@ -7,7 +7,7 @@ body {
     color: #fffdfd;
     text-align: center;
 }
-.grid-container{
+.gallery-container{
 
     display: grid;
     gap: 10px;

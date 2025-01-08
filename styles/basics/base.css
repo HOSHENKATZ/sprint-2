@@ -11,14 +11,6 @@ body {
     margin: 0;
     background-color: white;
 }
-
-img {
-    width: 100%;
-}
-
-p{
-    margin: 0, 0, 1em;
-}
 .btn {
     cursor: pointer;
     color: #c2c2c2;

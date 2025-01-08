@@ -1,0 +1,7 @@
+
+.canvas-container{
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
