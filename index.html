@@ -47,20 +47,24 @@
         <section class="meme-editor hidden">
             <h3>Container</h3>
             <main class="editor-content">
-                    <div class="canvas-container">
-                        
-                        <canvas width="400" height="400">
-                        </canvas>
-                    </div>
-                    <div class="control-painel">
-                        <form action="" >
-                            <label for="text">text</label>
-                            <input type="text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
+                <div class="canvas-container">
 
-                        </form>
-                    </div>
-                </main>
-            </section>
+                    <canvas width="400" height="400">
+                    </canvas>
+                </div>
+                <div class="control-painel">
+                    <form action="" onchange="getMemeSenttings(this)">
+                           <label for="text">text:</label>
+                            <input type=" text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
+                            <label for="color">color:</label>
+                            <input type="color" id="color" placeholder="#000">
+                            <label for="size">size:</label>
+                            <input type="range" id="size" min="1" max="150" value="100" >
+                    </form>
+                    <button class="btn arrow" onclick="onDownloadImg(this)"> download="my-img.jpg">Download Image from Canvas</button>
+                </div>
+            </main>
+        </section>
 
     </main>
 

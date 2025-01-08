@@ -8,6 +8,7 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
     onResize()
     console.log(gCtx)
+    
 }
 
 function onResize() {

@@ -13,17 +13,18 @@ body {
 }
 .btn {
     cursor: pointer;
-    color: #c2c2c2;
+    color: #080808;
     border: 2px solid #c2c2c2;
     background-color: var(--clr-head);
     font-family: inherit;
     font-size: 1em;
     padding: 0.5em 1.25em;
+    margin-top: 10px;
 }
 
 .btn:hover {
-    color: RGBA(87.92655, 201.0012, 57.540749999999996, 1);;
-    border-color: var(--clr-primary2);
+    color: var(--clr-primary1);
+    border-color: var(--clr-primary1);
 }
 
 /* button rounded */
@@ -45,7 +46,7 @@ body {
 }
 
 .btn.arrow::after {
-    content: '→';
+    content: '↓';
     opacity: 0;
     position: absolute;
     right: 0.75em;

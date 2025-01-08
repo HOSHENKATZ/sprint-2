@@ -7,8 +7,8 @@ function creatMeme(imgId) {
         selectedLineIdx: 0,
         lines: [{
             txt: null,
-            size: null,
-            color: 'red'
+            size: 100,
+            color: null
         }]
     }
     gMemes.push(meme)
