@@ -20,7 +20,8 @@ function renderMeme(meme = gcurrmeme) {
     var txt = document.getElementById('line').value
     if (line.length === 0) return
     modifyLine(meme, txt)
-
+    var selectedLine = gcurrmeme.lines[gcurrmeme.selectedLineIdx]
+    drawRect(selectedLine.x, selectedLine.y)
 
 }
 
@@ -39,7 +40,7 @@ function drawImg(id) {
 function drawText(lines) {
     lines.forEach(line => {
         console.log(line)
-        gCtx.lineWidth = 5
+        gCtx.lineWidth = 3
         gCtx.fillStyle = line.fillColor
         
         gCtx.strokeStyle = line.outlineColor
@@ -48,8 +49,16 @@ function drawText(lines) {
         gCtx.textAlign = 'left'
         gCtx.textBaseline = 'top'
         gCtx.fillText(line.txt, line.x, line.y)
-        gCtx.strokeText(line.txt, line.x, line.y)
-    });
+        gCtx.strokeText(line.txt, line.x, line.y) 
+    });  
+}
+function drawRect(x, y) {
+    var text = gcurrmeme.lines[gcurrmeme.selectedLineIdx].txt
+    console.log(text)
+    var txt = gCtx.measureText(text)
+    gCtx.strokeStyle = 'orange'
+    gCtx.strokeRect(x, y, gcurrmeme.lines[gcurrmeme.selectedLineIdx].size, txt.Width)
+ 
 }
 
 function onAddLine(){
