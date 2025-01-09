@@ -170,6 +170,11 @@ function onDeleteLine() {
     deleteLine()
     renderMeme()
 }
+
+// save a meme //
+function onSave(){
+    saveToStorage(STORAGE_KEY, gMemes)
+}
 // def pos ev for desktop / mobile //
 
 function getEvPos(ev) {

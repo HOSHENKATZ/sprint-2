@@ -22,6 +22,7 @@ function creatMeme(imgId) {
         ]
     }
     gMemes.push(meme)
+    saveToStorage(STORAGE_KEY, gMemes)
     return meme
 }
 

@@ -15,7 +15,7 @@
             <nav class="main-nav">
                 <ul class="flex clean-list">
                     <li onclick="location.reload()"><a>Photo gallery</a></li>
-                    <li onclick="onLiclick(this)"><a>My saved memes</a></li>
+                    <li onclick="onSavedGallclick(this)"><a>My saved memes</a></li>
                     <li onclick="onLiclick(this)"><a>About</a></li>
                 </ul>
             </nav>
@@ -48,6 +48,9 @@
             <img src="img/21.jpg" alt="" onclick=" onMemePicked(this)" id='21'>
             <img src="img/22.jpg" alt="" onclick=" onMemePicked(this)" id='22'>
         </section>
+        <section class="saved-gallery hidden">
+
+        </section>
         <section class="meme-editor hidden">
             <h3>Container</h3>
             <main class="editor-content">
@@ -70,14 +73,17 @@
                         <button class="btn rounded" type="button" onclick="onAddLine()">Add text</button>
                         <button class="btn rounded" type="button" onclick="onSwitchLine()">switch lines</button>
                         <button class="btn rounded" type="button" onclick="onDeleteLine()">delete line</button>
+                        <button class="btn rounded" type="button" onclick="onSave()">save</button>
                     </form>
                     <a type="submit" class="btn rounded arrow" onclick="onDownloadImg(this)" download="my-meme.jpg">Download meme</a>
+                    
                 </div>
             </main>
         </section>
 
     </main>
 
+    <script src="JS/storage service.js"></script>
     <script src="JS/service.js"></script>
     <script src="JS/gallerycontroller.js"></script>
     <script src="JS/memecontroller.js"></script>
