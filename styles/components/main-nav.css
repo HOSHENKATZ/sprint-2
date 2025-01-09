@@ -9,7 +9,7 @@
 .main-nav a {
     display: grid;
     place-items: center;
-    width: 130px;
+    
     height: 130px;
     color: inherit;
     text-decoration: none;
@@ -19,6 +19,6 @@
 
 .main-nav a:hover {
     border-bottom: 7px solid;
-    border-bottom-color: #58C93A;
+    border-bottom-color: #777575;
 
 }
