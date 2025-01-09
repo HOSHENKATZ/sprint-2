@@ -171,19 +171,20 @@ function onDeleteLine() {
 }
 
 // save a meme //
-// function onSave(){
-//     renderMemeForDownload(gcurrmeme)
-//     saveToStorage(MEMES_KEY, gMemes)
-//     setTimeout(() => {
-//         const canvasData = gElCanvas.toDataURL('image/jpeg')
+function onSave(){
+    renderMemeForDownload(gcurrmeme)
+    saveToStorage(MEMES_KEY, gMemes)
+    setTimeout(() => {
+        const canvasData = gElCanvas.toDataURL('image/jpeg',0.2)
     
-        
-//         var memeContent = uploadImg(canvasData)
-//         console.log(memeContent)
-//         saveRenderedMeme(memeContent, gcurrmeme.id)
-//     }, 1000);
+        console.log('canvasData:' + canvasData);
+        saveRenderedMeme(canvasData,gcurrmeme.id)
+        // var memeContent = uploadImg(canvasData)
+        // console.log(memeContent)
+        // saveRenderedMeme(memeContent, gcurrmeme.id)
+    }, 1000);
     
-// }
+}
 // def pos ev for desktop / mobile //
 
 function getEvPos(ev) {

@@ -4,7 +4,7 @@ let gSavedMemes
 function getSavedMemes() {
     gSavedMemes = loadFromStorage(SAVED_KEY)
     if (!gSavedMemes) gSavedMemes = []
-    console.log(gSavedMemes)
+    console.log('saved',gSavedMemes)
 }
 
 function saveRenderedMeme(url, id) {
@@ -13,6 +13,7 @@ function saveRenderedMeme(url, id) {
         url,
         id
     }
+    console.log(meme)
     gSavedMemes.push(meme)
 
     saveToStorage(SAVED_KEY, gSavedMemes)

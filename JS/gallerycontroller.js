@@ -1,16 +1,16 @@
 'use strict'
 
 let gElCanvas
-let gCtx 
+let gCtx
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    getMemes() 
-    // getSavedMemes()
+    getMemes()
+    getSavedMemes()
     onResize()
     console.log(gCtx)
-    
+
 }
 
 function onResize() {
@@ -31,12 +31,12 @@ function onMemePicked(elImage) {
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor').classList.remove('hidden')
     gcurrImg = elImage
-    var meme = creatMeme(elImage.id)
-    gcurrmeme = meme
+    creatMeme(elImage.id)
+    gcurrmeme = gMemes[gMemes.length-1]
     renderMeme(gcurrmeme)
 }
 
-function onPhotoGallView(){
+function onPhotoGallView() {
     document.querySelector('.meme-editor').classList.add('hidden')
     document.querySelector('.gallery-container').classList.remove('hidden')
 
