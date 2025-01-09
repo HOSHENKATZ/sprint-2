@@ -74,12 +74,12 @@ function drawText(lines) {
 }
 function drawRect(x, y) {
     var text = gcurrmeme.lines[gcurrmeme.selectedLineIdx].txt
-    console.log(text)
+   
     var txt = gCtx.measureText(text)
-    console.log(txt.width)
+    
     if (txt.width === 0) return
     gCtx.strokeStyle = 'orange'
-    console.log(x, y, gcurrmeme.lines[gcurrmeme.selectedLineIdx].size, txt.width)
+    
     saveLineCoords(y + +(gcurrmeme.lines[gcurrmeme.selectedLineIdx].size), txt.width)
     gCtx.strokeRect(x, y, txt.width, gcurrmeme.lines[gcurrmeme.selectedLineIdx].size)
 
@@ -99,7 +99,7 @@ function onDown(ev) {
     } else {
 
         setLineDrag(true)
-        console.log(gcurrmeme)
+        
         //Save the pos we start from
         gStartPos = pos
         console.log(gStartPos)
@@ -108,32 +108,31 @@ function onDown(ev) {
 }
 
 function onMove(ev) {
-    console.log('onMove')
-    console.log(gcurrmeme)
+    
 
     const { isDrag } = getMeme()
-    console.log(isDrag)
+   
     if (isDrag === false) {
         return
     } else {
-        console.log('else')
+        
         const position = getEvPos(ev)
         // console.log('pos:', pos)
         // Calc the delta, the diff we moved
         const dx = position.x - gcurrmeme.lines[gcurrmeme.selectedLineIdx].pos.x
         const dy = position.y - gcurrmeme.lines[gcurrmeme.selectedLineIdx].pos.y
-        console.log(dx, dy)
+
         moveLine(dx, dy)
         // Save the last pos, we remember where we`ve been and move accordingly
         gStartPos = position
-        console.log(gStartPos)
+       
         // The canvas is render again after every move
         renderMeme()
     }
 }
 
 function onUp() {
-    console.log('onUp')
+   
 
     setLineDrag(false)
     document.body.style.cursor = 'grab'
@@ -172,9 +171,19 @@ function onDeleteLine() {
 }
 
 // save a meme //
-function onSave(){
-    saveToStorage(STORAGE_KEY, gMemes)
-}
+// function onSave(){
+//     renderMemeForDownload(gcurrmeme)
+//     saveToStorage(MEMES_KEY, gMemes)
+//     setTimeout(() => {
+//         const canvasData = gElCanvas.toDataURL('image/jpeg')
+    
+        
+//         var memeContent = uploadImg(canvasData)
+//         console.log(memeContent)
+//         saveRenderedMeme(memeContent, gcurrmeme.id)
+//     }, 1000);
+    
+// }
 // def pos ev for desktop / mobile //
 
 function getEvPos(ev) {
@@ -197,4 +206,26 @@ function getEvPos(ev) {
         }
     }
     return pos
+}
+
+// upload meme //
+function onUploadImg(ev) {
+    ev.preventDefault()
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    // After a succesful upload, allow the user to share on Facebook
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+
+        // document.querySelector('.share-container').innerHTML = `
+        // <a href="${uploadedImgUrl}">Uploaded picture</a>
+        // <p>Image url: ${uploadedImgUrl}</p>
+        // <button class="btn-facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}')">
+        //    Share on Facebook  
+        // </button>`
+    }
+
+    uploadImg(canvasData, onSuccess)
 }

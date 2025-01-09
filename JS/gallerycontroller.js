@@ -6,6 +6,8 @@ let gCtx
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
+    getMemes() 
+    // getSavedMemes()
     onResize()
     console.log(gCtx)
     
@@ -26,14 +28,16 @@ function toggleMenu() {
 // main gallery //
 
 function onMemePicked(elImage) {
-    console.log('picked')
-    console.dir(elImage)
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor').classList.remove('hidden')
     gcurrImg = elImage
-    console.log(elImage)
     var meme = creatMeme(elImage.id)
     gcurrmeme = meme
     renderMeme(gcurrmeme)
 }
 
+function onPhotoGallView(){
+    document.querySelector('.meme-editor').classList.add('hidden')
+    document.querySelector('.gallery-container').classList.remove('hidden')
+
+}
