@@ -22,13 +22,13 @@ function getMemeSenttings(elForm) {
 // rendering meme components//
 
 function renderMeme(meme = gcurrmeme) {
-    drawImg(gcurrmeme.imgId)
+    drawImgEdit(gcurrmeme.imgId)
     var txt = document.getElementById('line').value
     if (line.length === 0) return
     modifyLine(meme, txt)
 }
 
-function drawImg(id) {
+function drawImgEdit(id) {
 
     const elImg = new Image()
     elImg.src = `img/${id}.jpg`
@@ -39,6 +39,24 @@ function drawImg(id) {
         drawText(gcurrmeme.lines)
         var selectedLine = gcurrmeme.lines[gcurrmeme.selectedLineIdx]
         drawRect(selectedLine.pos.x, selectedLine.pos.y)
+    }
+}
+
+function renderMemeForDownload(meme = gcurrmeme) {
+    drawImgDownload(gcurrmeme.imgId)
+    var txt = document.getElementById('line').value
+    if (line.length === 0) return
+    modifyLine(meme, txt)
+}
+function drawImgDownload(id) {
+
+    const elImg = new Image()
+    elImg.src = `img/${id}.jpg`
+
+    elImg.onload = () => {
+        gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        drawText(gcurrmeme.lines)
     }
 }
 
@@ -131,8 +149,12 @@ function onAddLine() {
     renderMeme()
 }
 function onDownloadImg(elLink) {
+    renderMemeForDownload(gcurrmeme)
+setTimeout(() => {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
+}, 200);
+    
 }
 
 function onSwitchLine() {
