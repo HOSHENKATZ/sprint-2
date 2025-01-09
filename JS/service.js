@@ -11,15 +11,32 @@ function creatMeme(imgId) {
                 size: 100,
                 outlineColor: null,
                 fillColor: null,
-                x: 0,
-                y: 0
-    
+                pos: {
+                    x: 0,
+                    y: 0,
+                    height: null,
+                    width: null
+                }
             }
         ]
     }
     gMemes.push(meme)
     return meme
 }
+
+function getMeme() {
+    return gcurrmeme
+}
+
+// function isMemeClicked(clickedPos) {
+//     const { pos } = gCircle
+//     // Calc the distance between two dots
+//     const distance = Math.sqrt((pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2)
+//     // console.log('distance', distance)
+//     //If its smaller then the radius of the circle we are inside
+//     return distance <= gCircle.size
+// }
+
 
 function modifyLine(meme, text) {
     console.log(meme.selectedLineIdx)
@@ -29,24 +46,32 @@ function modifyLine(meme, text) {
     console.log(meme.lines[meme.selectedLineIdx])
 }
 
-function addLine() {
-    selectedLineIdx =  gcurrmeme.lines.length + 1
-        gcurrmeme.lines.push({
-            txt: '',
-            size: 100,
-            color: null,
-            x: 0,
-            y: gElCanvas.height - 100
-
-        })
-    
-    switchLine()
-    
+function saveLineCoords(height, width){
+line = gcurrmeme.lines[gcurrmeme.selectedLineIdx]
+line.height = height
+line.width = width
+console.log(line)
 }
-function switchLine(){
-    gcurrmeme.selectedLineIdx ++
-    if (gcurrmeme.selectedLineIdx > gcurrmeme.lines.length - 1){
-        gcurrmeme.selectedLineIdx =  0
+function addLine() {
+    selectedLineIdx = gcurrmeme.lines.length + 1
+    gcurrmeme.lines.push({
+        txt: '',
+        size: 100,
+        color: null,
+        pos:{
+            x: 0,
+            y: gElCanvas.height - 100,
+            height: null,
+            width: null
+        }
+    })
+    switchLine()
+    renderMeme()
+}
+function switchLine() {
+    gcurrmeme.selectedLineIdx++
+    if (gcurrmeme.selectedLineIdx > gcurrmeme.lines.length - 1) {
+        gcurrmeme.selectedLineIdx = 0
     }
-
+  
 }

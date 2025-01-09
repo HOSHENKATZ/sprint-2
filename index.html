@@ -49,7 +49,8 @@
             <main class="editor-content">
                 <div class="canvas-container">
 
-                    <canvas width="400" height="400">
+                    <canvas width="400" height="400"  onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
+                    ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()">
                     </canvas>
                 </div>
                 <div class="control-painel">
