@@ -33,6 +33,7 @@ function onMemePicked(elImage) {
     gcurrImg = elImage
     creatMeme(elImage.id)
     gcurrmeme = gMemes[gMemes.length-1]
+    document.getElementById('the-form').reset()
     renderMeme(gcurrmeme)
 }
 

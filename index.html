@@ -49,7 +49,7 @@
             <img src="img/22.jpg" alt="" onclick=" onMemePicked(this)" id='22'>
         </section>
         <section class="saved-gallery hidden">
-
+            <main class="saved-content"></main>
         </section>
         <section class="meme-editor hidden">
             <h3>Container</h3>
@@ -61,7 +61,7 @@
                     </canvas>
                 </div>
                 <div class="control-painel">
-                    <form action="" onchange="getMemeSenttings(this)">
+                    <form action="" onchange="getMemeSenttings(this)" id="the-form">
                         <label for="text">text:</label>
                         <input type=" text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
                         <label for="color">Text outline color:</label>

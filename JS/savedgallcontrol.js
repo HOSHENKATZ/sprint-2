@@ -8,7 +8,7 @@ function onSavedGallclick(elSaved) {
     var strHtml = ''
     gSavedMemes.forEach(meme => {
         strHtml += `<img src="${meme.url}" alt="" onclick=" onSavedMemeclick(this)" id='${meme.id}'></img>`
-        document.querySelector('.saved-gallery').innerHTML = strHtml
+        document.querySelector('.saved-content').innerHTML = strHtml
     });
     console.log(strHtml)
 
@@ -18,8 +18,8 @@ function onSavedMemeclick(elImg) {
     elImg
     var selectedIdx = gMemes.findIndex((meme) => meme.id === elImg.id );
     // console.log(selected)
-    document.querySelector('.meme-editor').classList.remove('hidden')
     document.querySelector('.saved-gallery').classList.add('hidden')
+    document.querySelector('.meme-editor').classList.remove('hidden')
     gcurrmeme = gMemes[selectedIdx]
     console.log(gcurrmeme)
     renderMemeForDownload()

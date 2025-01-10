@@ -84,8 +84,13 @@
         grid-column: span 3;
         grid-row: span 3;
     }
-
-    .saved-gallery {
+    .saved-gallery{
+        width:90vw;
+        margin: auto;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .saved-content {
         display: grid;
         grid-template-columns:
             var(--layoutpadding) 1fr 1fr var(--layoutpadding);
@@ -93,11 +98,11 @@
         gap: 20px;
     }
 
-    .saved-gallery>:nth-child(odd) {
+    .saved-content>:nth-child(odd) {
         grid-column: 2;
     }
 
-    .saved-gallery>:nth-child(even) {
+    .saved-content>:nth-child(even) {
         grid-column: 3;
     }
 
