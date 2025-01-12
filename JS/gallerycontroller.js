@@ -30,6 +30,7 @@ function toggleMenu() {
 function onMemePicked(elImage) {
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor').classList.remove('hidden')
+    document.querySelector('.saved-gallery').classList.add('hidden')
     gcurrImg = elImage
     creatMeme(elImage.id)
     gcurrmeme = gMemes[gMemes.length-1]
@@ -40,5 +41,6 @@ function onMemePicked(elImage) {
 function onPhotoGallView() {
     document.querySelector('.meme-editor').classList.add('hidden')
     document.querySelector('.gallery-container').classList.remove('hidden')
+    document.querySelector('.saved-gallery').classList.add('hidden')
 
 }
