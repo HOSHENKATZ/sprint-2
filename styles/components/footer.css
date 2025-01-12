@@ -2,27 +2,8 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    background: rgba(248.0000004172325, 248.0000004172325, 248.0000004172325, 1)
-}
-
-footer p{
-    color: rgba(165.9999, 165.9999, 165.9999, 1);
-
-}
-
-.footer-social {
-    gap: 1.5em;
-    padding-bottom: 10px;
-}
-
-.footer-social a {
-    display: grid;
-    place-items: center;
-    width: 2.4em;
-    height: 2.4em;
-    background-color: #ccc;
-    color: #fff;
-    font-size: 0.8em;
-    text-decoration: none;
-    
+    background-color: var(--clr-primary1); 
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
 }
