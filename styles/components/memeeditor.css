@@ -15,9 +15,60 @@ h3{
 
 .control-painel form{
     margin-bottom: 30px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
-label{
-    color:black;
+.text-edits{
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    
+    align-self: center;
+
 }
+.text-input{
+    grid-column: 1 / -1;
+    justify-self: stretch;
+}
+label{
+    color:rgb(81, 78, 78);
+    justify-self: start;
+}
+input{
+    border-radius: 7px;
+    border: 0px;
+    background-color: rgb(183, 183, 183);
+    justify-self: center;
+}
+
+.color{
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.range {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 20px;  
+    background-color: rgb(79, 74, 74);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 20px; 
+    background-color: var(--clr-primary1);
+    cursor: pointer;
+  }
