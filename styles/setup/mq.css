@@ -74,6 +74,11 @@
 
 
     }
+    .main-nav a {
+        width: 130px;
+        height: 130px;
+    }
+
 
     img:nth-child(4n) {
         grid-column: span 2;
@@ -128,7 +133,7 @@
 
     .main-layout {
         grid-template-columns:
-            minmax(var(--layoutpadding), 1fr) minmax(auto, 980px) minmax(var(--layoutpadding), 1fr);
+            minmax(var(--layoutpadding), 1fr) minmax(auto, 1280px) minmax(var(--layoutpadding), 1fr);
     }
 
     .main-nav a {
