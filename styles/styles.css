@@ -7,6 +7,7 @@
 @import url(components/main-nav.css);
 @import url(components/footer.css);
 @import url(components/gallery.css);
+@import url(components/modal.css);
 
 /* Basics  */
 @import url(basics/base.css);

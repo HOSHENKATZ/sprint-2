@@ -16,12 +16,23 @@
                 <ul class="flex clean-list">
                     <li onclick="onPhotoGallView()"><a>Photo gallery</a></li>
                     <li onclick="onSavedGallclick(this)"><a>My saved memes</a></li>
-                    <li onclick="onLiclick(this)"><a>About</a></li>
+                    <li onclick="openModal()"><a>About</a></li>
                 </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
+    <div class="backdrop" onclick="closeModal(event)">
+        <section class="modal">
+            <button onclick="closeModal(event)" class="btn-close">x</button>
+            <p>
+                Hello! <br>
+                I am Hoshen Katz. <br>
+                A musician and sound engineer i like coding and computers. <br>
+                this is a meme maker by me so you can have a look what im capable coding after 6 weeks of coding. <br>
+            </p>
+        </section>
+    </div>
     <main>
         <section class="gallery-container">
 
@@ -56,14 +67,15 @@
             <main class="editor-content">
                 <div class="canvas-container">
 
-                    <canvas width="400" height="400"  onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
-                    ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()">
+                    <canvas width="400" height="400" onmousedown="onDown(event)" onmousemove="onMove(event)"
+                        onmouseup="onUp()" ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()">
                     </canvas>
                 </div>
                 <div class="control-painel">
                     <form action="" onchange="getMemeSenttings(this)" id="the-form">
                         <section class="text-edits">
-                            <input class="text-input" type="text" name="line" id="line" placeholder="insert text" oninput="renderMeme()">
+                            <input class="text-input" type="text" name="line" id="line" placeholder="insert text"
+                                oninput="renderMeme()">
                             <label for="color">Text outline:</label>
                             <input class="color" type="color" id="color" placeholder="#000">
                             <label for="color">Text fill:</label>
@@ -80,18 +92,17 @@
 
                             <button class="btn rounded" type="button" onclick="onUploadImg(event)">Share on F.B</button>
                             <button class="btn rounded" type="button" onclick="onSave()">Save</button>
-                            <a type="submit" class="btn rounded arrow" onclick="onDownloadImg(this)" download="my-meme.jpg">Download meme</a>
+                            <a type="submit" class="btn rounded arrow" onclick="onDownloadImg(this)"
+                                download="my-meme.jpg">Download meme</a>
                         </section>
                     </form>
-                    
+
                 </div>
             </main>
         </section>
 
     </main>
     <footer class="main-footer">
-        <h2>Hoshen Katz</h2>
-    </footer>
         <h2>Hoshen Katz</h2>
     </footer>
     <script src="JS/storage service.js"></script>
@@ -101,6 +112,7 @@
     <script src="JS/savedgallcontrol.js"></script>
     <script src="JS/gallerycontroller.js"></script>
     <script src="JS/memecontroller.js"></script>
+    <script src="JS/about.js"></script>
 </body>
 
 </html>

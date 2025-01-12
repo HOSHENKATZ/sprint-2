@@ -4,6 +4,9 @@ function onSavedGallclick(elSaved) {
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor').classList.add('hidden')
     document.querySelector('.saved-gallery').classList.remove('hidden')
+    var body = document.querySelector('body')
+   
+    body.classList.remove('menu-open')
     console.log(gSavedMemes)
     var strHtml = ''
     gSavedMemes.forEach(meme => {
