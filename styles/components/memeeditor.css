@@ -1,7 +1,11 @@
 
+.meme-editor{
+    margin-top: 130px;
+}
+
 .editor-content{
     display: grid;
-    
+    margin-top: 40px ;
     gap: 30px;
 }
 .canvas-container{
