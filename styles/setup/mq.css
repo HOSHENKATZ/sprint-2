@@ -43,6 +43,12 @@
     .main-nav a {
         padding: 1em;
     }
+    .meme-editor{
+        margin-top: 70px;
+    }
+    .name{
+        margin-top: 3px;
+    }
 }
 
 /* Small */
